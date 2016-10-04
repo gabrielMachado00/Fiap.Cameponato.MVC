@@ -1,0 +1,33 @@
+﻿@model Fiap.Apostila08.MVC.Web.Models.Time
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastro de Time</h2>
+
+@if (TempData["msg"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["msg"]
+    </div>
+}
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(t => t.Nome)
+        @Html.TextBoxFor(t => t.Nome, new { @class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(t => t.Cor)
+        @Html.TextBoxFor(t => t.Cor, new { @class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(t => t.DataFundacao)
+        @Html.TextBoxFor(t => t.DataFundacao, new { @class = "form-control"})
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Cadastrar" class="btn btn-primary" />
+    </div>
+}
+

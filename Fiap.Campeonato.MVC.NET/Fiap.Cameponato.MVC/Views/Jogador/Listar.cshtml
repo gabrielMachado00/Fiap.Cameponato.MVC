@@ -1,0 +1,25 @@
+﻿@model List<Fiap.Apostila08.MVC.Web.Models.Jogador>
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Lista de Jogadores</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Nome</th>
+        <th>Posição</th>
+        <th>Salário</th>
+        <th>Time</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Nome</td>
+            <td>@item.Posicao</td>
+            <td>@item.Salario</td>
+            <td>@(item.Time != null?item.Time.Nome: "Sem Time")</td>
+        </tr>
+    }
+</table>
+
